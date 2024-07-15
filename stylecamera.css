@@ -1,0 +1,120 @@
+*{
+    margin:0;
+    padding:0; /*applying these two properties provides us a clean slate without any margin or padding*/
+    font-family: 'Mooli', sans-serif;/*this line copied from the same site from where we have copies]d the links of fint family*/
+}
+
+.main_box
+{
+    background:url("camera.jpg");
+    /*to give div i.e main box height of complete page not only the area required by content we use */
+    height:100vh;
+    background-size:cover;/*here entire image will cover our background*/
+}
+.btn_one{
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+    position:absolute;/*i.e its position is set with respect to its absolute parent or wrt the web page*/
+    left:16px;
+    line-height:60px;
+}
+
+.sidebar_menu{
+    position:fixed;
+    left: -350px;/*moves item out of the screen  but it still exists which is imporatant for slide in and slide out animations */
+    height:100vh;
+    width:300px;
+    background-color:rgba(250, 235, 215,0.1);
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    transition: all 0.5s linear;
+}
+
+.sidebar_menu .logo{
+    position:absolute;
+    width: 100%;/*gives complete width in the side-bar menu*/
+    line-height:50px;
+    box-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+.sidebar_menu .logo a{ /*properties will only be applied to the anchor tag within the logo cass which is in the sidebar_menu class*/
+position:absolute;
+left:50px;
+color:aliceblue;
+text-decoration:none;    
+font-size:20px;
+}
+
+.sidebar_menu .btn_two{
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    opacity: 0;
+    position:absolute;/*i.e its position is set with respect to its absolute parent or wrt the web page*/
+    left:16px;
+    line-height:60px;
+    position:absolute;
+    left:275px;
+}
+
+.sidebar_menu .menu{
+    color:white;
+    position: absolute;
+    width: 100%;
+    top:80px;
+}
+
+.sidebar_menu .menu li{ /*applying css to all list items with the menu contained in the sidebar_menu*/
+margin-top:5px;
+padding:15px 20px; /*padding of 15px from top and bottom and 20px from left and right */
+}
+
+.sidebar_menu .menu i,a{ /*applying css to anchor tag and icons wih=thin the menu<sidebar_menu*/
+    color:antiquewhite;
+    text-decoration: none;
+    font-size:20px;
+
+}
+.sidebar_menu .menu i{ /*to create distance between the text and icon we'll add padding towards its right*/
+padding-right:10px;
+}
+
+.sidebar_menu .social_media{
+    color:antiquewhite;
+    position:absolute;
+    left:15%;
+    bottom:60px;
+}
+
+.sidebar_menu .social_media i{
+    color:white;
+    opacity:0.5;
+    padding:0 8px;
+}
+#check{
+    display:none;
+}
+.sidebar_menu .menu li:hover{
+    box-shadow: 0 0 5px rgba(255,255,255,0.5);
+    transition: all 0.2s linear;
+
+}
+.main_box .btn_one i:hover{
+    font-size:40px;
+}
+.sidebar_menu .social_media i:hover{
+    opacity:1;
+    transform:scale(1.5);
+    transition: all 0.2s linear; 
+}
+#check:checked ~ .sidebar_menu{ /*here we are referring to the sibling of element with id check*/
+left:0;
+}
+/*here on clicking on the 3solid lines will check the checkbox then the actual width of sidebar_bar menu will chnage to zero and clicking on the cross mark will uncheck the checkbox and again the width of the sidebar_menu will be set to its default state i.e -350px i.e it will disappear from the screen*/
+
+#check:checked  ~.btn_one i{
+    opacity:0;
+}
+#check:checked   ~.sidebar_menu .btn_two {
+    opacity:1;
+}
